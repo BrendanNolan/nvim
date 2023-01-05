@@ -191,6 +191,11 @@ _G.packer_plugins = {
     path = "/home/brendan/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["tender.vim"] = {
+    loaded = true,
+    path = "/home/brendan/.local/share/nvim/site/pack/packer/start/tender.vim",
+    url = "https://github.com/jacoborus/tender.vim"
+  },
   undotree = {
     loaded = true,
     path = "/home/brendan/.local/share/nvim/site/pack/packer/start/undotree",
