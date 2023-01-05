@@ -20,6 +20,7 @@ return require('packer').startup(function(use)
   use { "Mofiqul/vscode.nvim" }
   use { "chriskempson/base16-vim" }
   use { "jacoborus/tender.vim" }
+  use 'Mofiqul/dracula.nvim'
 
   use('nvim-treesitter/nvim-treesitter', {run = 'TSUpdate'})
   use('nvim-treesitter/playground')
