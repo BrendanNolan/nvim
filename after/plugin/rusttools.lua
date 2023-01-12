@@ -9,7 +9,7 @@ rt.setup({
   server = {
     on_attach = function(_, bufnr)
       local opts = {buffer = bufnr, remap = false}
-      Setup_LSP_Keymaps(opts)
+      SetupLSPKeymaps(opts)
     end,
     cmd = { "rustup", "run", "stable", "rust-analyzer" },
   },

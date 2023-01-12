@@ -62,7 +62,7 @@ lsp.on_attach(function(client, bufnr)
       return
   end
 
-  Setup_LSP_Keymaps(opts)
+  SetupLSPKeymaps(opts)
 end)
 
 lsp.setup()
