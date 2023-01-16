@@ -39,3 +39,6 @@ dap.configurations.cpp = {
 dap.configurations.c = dap.configurations.cpp
 dap.configurations.rust = dap.configurations.cpp
 
+vim.keymap.set("n", "<leader>db", "<Cmd>DapToggleBreakpoint<CR>")
+vim.keymap.set("n", "<leader>dc", "<Cmd>DapContinue<CR>")
+
