@@ -10,9 +10,8 @@ rt.setup({
     on_attach = function(_, bufnr)
       local opts = {buffer = bufnr, remap = false}
       SetupLSPKeymaps(opts)
-      -- Hover actions
+
       vim.keymap.set("n", "kk", rt.hover_actions.hover_actions, { buffer = bufnr })
-      -- Code action groups
       vim.keymap.set("n", "aa", rt.code_action_group.code_action_group, { buffer = bufnr })
     end,
     cmd = { "rustup", "run", "stable", "rust-analyzer" },
@@ -22,4 +21,8 @@ rt.setup({
       codelldb_path, liblldb_path)
   },
 })
+
+
+vim.keymap.set("n", "<leader>rdb", rt.debuggables.debuggables)
+vim.keymap.set("n", "<leader>rr", rt.runnables.runnables)
 
