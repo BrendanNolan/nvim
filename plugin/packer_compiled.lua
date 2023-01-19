@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/brendan/.local/share/nvim/site/pack/packer/start/base16-vim",
     url = "https://github.com/chriskempson/base16-vim"
   },
+  ["clangd_extensions.nvim"] = {
+    loaded = true,
+    path = "/home/brendan/.local/share/nvim/site/pack/packer/start/clangd_extensions.nvim",
+    url = "https://github.com/p00f/clangd_extensions.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/brendan/.local/share/nvim/site/pack/packer/start/cmp-buffer",
