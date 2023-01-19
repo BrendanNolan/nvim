@@ -11,8 +11,8 @@ rt.setup({
       local opts = {buffer = bufnr, remap = false}
       SetupLSPKeymaps(opts)
 
-      vim.keymap.set("n", "kk", rt.hover_actions.hover_actions, { buffer = bufnr })
-      vim.keymap.set("n", "aa", rt.code_action_group.code_action_group, { buffer = bufnr })
+      vim.keymap.set("n", "<leader>kk", rt.hover_actions.hover_actions, { buffer = bufnr })
+      vim.keymap.set("n", "<leader>aa", rt.code_action_group.code_action_group, { buffer = bufnr })
     end,
     cmd = { "rustup", "run", "stable", "rust-analyzer" },
   },
