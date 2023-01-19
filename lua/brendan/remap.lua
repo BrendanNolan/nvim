@@ -45,3 +45,9 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader>.", "10<C-w>>")
 vim.keymap.set("n", "<leader>,", "10<C-w><")
 
+-- Disable arrow keys
+vim.keymap.set({'n', 'i', 'v', 'x'}, "<Left>", "<nop>")
+vim.keymap.set({'n', 'i', 'v', 'x'}, "<Right>", "<nop>")
+vim.keymap.set({'n', 'i', 'v', 'x'}, "<Up>", "<nop>")
+vim.keymap.set({'n', 'i', 'v', 'x'}, "<Down>", "<nop>")
+
