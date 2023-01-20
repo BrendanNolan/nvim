@@ -59,5 +59,6 @@ return require('packer').startup(function(use)
   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 
   use 'p00f/clangd_extensions.nvim'
+  use 'ThePrimeagen/vim-be-good'
 end)
 
