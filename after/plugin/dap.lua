@@ -39,6 +39,16 @@ dap.configurations.cpp = {
 dap.configurations.c = dap.configurations.cpp
 dap.configurations.rust = dap.configurations.cpp
 
-vim.keymap.set("n", "<leader>db", "<Cmd>DapToggleBreakpoint<CR>")
-vim.keymap.set("n", "<leader>dc", "<Cmd>DapContinue<CR>")
+vim.keymap.set("n", "<F1>", dap.step_into)
+vim.keymap.set("n", "<F2>", dap.step_over)
+vim.keymap.set("n", "<F3>", dap.step_out)
+vim.keymap.set("n", "<F4>", dap.continue)
+
+vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint)
+vim.keymap.set("n", "<leader>cb", function()
+    dap.set_breakpoint(vim.fn.input("Breakpoint Condition: "))
+end)
+
+
+require("nvim-dap-virtual-text").setup()
 
