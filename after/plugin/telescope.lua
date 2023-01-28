@@ -5,7 +5,7 @@ vim.keymap.set('n', '<leader>gf', builtin.git_files)
 vim.keymap.set('n', '<leader>gr', function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
-vim.keymap.set('n', '<leader>lf', builtin.current_buffer_fuzzy_find) -- Not working for some reason
+vim.keymap.set('n', '<leader>lf', builtin.current_buffer_fuzzy_find)
 vim.keymap.set('n', '<leader>lg', builtin.live_grep)
 vim.keymap.set('n', '<leader>tr', builtin.resume)
 
