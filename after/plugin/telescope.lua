@@ -12,3 +12,6 @@ require('telescope').setup{
         {layout_config = { width = 120 }, shorten_path = true}
     )
 }
+
+require('telescope').load_extension('fzf')
+
