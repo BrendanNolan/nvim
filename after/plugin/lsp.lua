@@ -14,6 +14,22 @@ vim.diagnostic.config({
     virtual_text = true,
 })
 
+-- Keymaps --
+local setup_lsp_keymaps = function(opts)
+  vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+  vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+  vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
+  vim.keymap.set("n", "<leader>vdf", vim.diagnostic.open_float, opts)
+  vim.keymap.set("n", "<leader>vds", vim.diagnostic.show, opts)
+  vim.keymap.set("n", "<leader>vdh", vim.diagnostic.hide, opts)
+  vim.keymap.set("n", "[d", vim.diagnostic.goto_next, opts)
+  vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, opts)
+  vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+  vim.keymap.set("n", "<leader>rf", vim.lsp.buf.references, opts)
+  vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+  -- vim.keymap.set("i", "Find Appropriate Keymap", vim.lsp.buf.signature_help, opts)
+end
+
 -- Completion --
 local cmp = require'cmp'
 
@@ -84,7 +100,7 @@ rt.setup({
   server = {
     on_attach = function(_, bufnr)
       local opts = {buffer = bufnr, remap = false}
-      SetupLSPKeymaps(opts)
+      setup_lsp_keymaps(opts)
 
       vim.keymap.set("n", "<leader>kk", rt.hover_actions.hover_actions, { buffer = bufnr })
       vim.keymap.set("n", "<leader>aa", rt.code_action_group.code_action_group, { buffer = bufnr })
@@ -107,7 +123,7 @@ require("clangd_extensions").setup({
   server = {
     on_attach = function(_, bufnr)
       local opts = {buffer = bufnr, remap = false}
-      SetupLSPKeymaps(opts)
+      setup_lsp_keymaps(opts)
     end,
     capabilities = completion_capabilities, 
   },
