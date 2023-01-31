@@ -30,6 +30,7 @@ TODO:
 2. How to move cursor to end of word.
 3. Blinking cursor on insert mode
 
-
 `ctrl + w + v` will open a new vim window. You can move between windows with `ctrl + v + <key>` where `<key>` signifies the direction (can use arrow keys or `hjkl` or maybe even other stuff).
+
+`:on` will make the current window the only one on the screen. All other windows are closed.
 
