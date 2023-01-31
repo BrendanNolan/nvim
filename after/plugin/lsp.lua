@@ -130,5 +130,10 @@ require("clangd_extensions").setup({
 })
 
 -- Lua --
-lsp.sumneko_lua.setup {}
+lsp.sumneko_lua.setup {
+    on_attach = function(_, bufnr)
+      local opts = {buffer = bufnr, remap = false}
+      setup_lsp_keymaps(opts)
+    end,
+}
 
