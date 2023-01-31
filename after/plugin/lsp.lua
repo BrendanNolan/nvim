@@ -6,6 +6,7 @@ require('mason').setup()
 require('mason-lspconfig').setup({
   ensure_installed = {
     'clangd',
+    'sumneko_lua',
   }
 })
 
@@ -111,4 +112,7 @@ require("clangd_extensions").setup({
     capabilities = completion_capabilities, 
   },
 })
+
+-- Lua --
+lsp.sumneko_lua.setup {}
 
