@@ -119,14 +119,17 @@ vim.keymap.set("n", "<leader>rdb", rt.debuggables.debuggables)
 vim.keymap.set("n", "<leader>rr", rt.runnables.runnables)
 
 -- Clangd --
-require("clangd_extensions").setup({
+local clangd = require("clangd_extensions")
+clangd.setup({
   server = {
     on_attach = function(_, bufnr)
       local opts = {buffer = bufnr, remap = false}
       setup_lsp_keymaps(opts)
+      vim.keymap.set("n", "<leader>th", "<cmd>ClangdSwitchSourceHeader<CR>", { buffer = bufnr })
     end,
-    capabilities = completion_capabilities, 
+    capabilities = completion_capabilities,
   },
+  extensions = { autoSetHints = false },
 })
 
 -- Lua --
