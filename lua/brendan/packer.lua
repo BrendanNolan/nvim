@@ -9,6 +9,11 @@ return require('packer').startup(function(use)
         "neovim/nvim-lspconfig",
     }
 
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v1.x',
+    }
+
     -- Completion --
     use {
         'hrsh7th/cmp-nvim-lsp',
