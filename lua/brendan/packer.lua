@@ -61,6 +61,12 @@ return require('packer').startup(function(use)
     use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
     use { "theHamsta/nvim-dap-virtual-text" }
 
+    -- Extension To Set Up Clangd Language Server --
     use 'p00f/clangd_extensions.nvim'
+
+    -- Vim Motions Practice Game --
     use 'ThePrimeagen/vim-be-good'
+
+    -- Folding --
+    use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 end)
