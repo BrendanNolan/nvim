@@ -159,5 +159,12 @@ lsp.sumneko_lua.setup {
       local opts = {buffer = bufnr, remap = false}
       setup_lsp_keymaps(opts)
     end,
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }  -- Fix "Undefined global 'vim'" LSP error.
+            }
+        }
+    }
 }
 
