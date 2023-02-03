@@ -69,4 +69,7 @@ return require('packer').startup(function(use)
 
     -- Folding --
     use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+
+    -- Auto Pairs --
+    use {'windwp/nvim-autopairs'}
 end)
