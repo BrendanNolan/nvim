@@ -60,3 +60,16 @@ vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 
+-- Format Code --
+local format_current_buffer = function()
+    local ft = vim.api.nvim_buf_get_option(0, 'filetype')
+    local file_path = vim.api.nvim_buf_get_name(0)
+    if ft == 'rust' then
+        vim.api.nvim_command("silent !cargo +nightly fmt -- " .. file_path)
+    elseif ft == 'cpp' then
+        vim.api.nvim_command("silent !clang-format -i " .. file_path)
+    end
+end
+
+vim.keymap.set('n', '<leader>fmt', format_current_buffer)
+
