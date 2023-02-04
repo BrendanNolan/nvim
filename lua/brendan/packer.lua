@@ -50,10 +50,7 @@ return require('packer').startup(function(use)
     use('nvim-treesitter/playground')
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
-
-    -- Git --
-    use { 'kdheepak/lazygit.nvim' }
-    ---------
+    use('tpope/vim-fugitive')
 
     use {
         'nvim-lualine/lualine.nvim',
