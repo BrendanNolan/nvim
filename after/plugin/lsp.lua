@@ -130,6 +130,14 @@ rt.setup({
     end,
     capabilities = completion_capabilities,
     cmd = { "rustup", "run", "stable", "rust-analyzer" },
+    settings = {
+        ["rust-analyzer"] = {
+            check = {
+                command = "clippy",
+                extraArgs = { "--all", "--", "-W", "clippy::all" }
+            }
+        }
+    },
   },
   dap = {
     adapter = require('rust-tools.dap').get_codelldb_adapter(
