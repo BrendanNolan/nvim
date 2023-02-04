@@ -125,6 +125,8 @@ rt.setup({
 
       vim.keymap.set("n", "<leader>kk", rt.hover_actions.hover_actions, { buffer = bufnr })
       vim.keymap.set("n", "<leader>aa", rt.code_action_group.code_action_group, { buffer = bufnr })
+      vim.keymap.set("n", "<leader>rdb", rt.debuggables.debuggables)
+      vim.keymap.set("n", "<leader>rr", rt.runnables.runnables)
     end,
     capabilities = completion_capabilities,
     cmd = { "rustup", "run", "stable", "rust-analyzer" },
@@ -136,8 +138,6 @@ rt.setup({
 })
 
 
-vim.keymap.set("n", "<leader>rdb", rt.debuggables.debuggables)
-vim.keymap.set("n", "<leader>rr", rt.runnables.runnables)
 
 -- Clangd --
 local clangd = require("clangd_extensions")
