@@ -198,7 +198,7 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     path = "/home/brendan/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
-    url = "https://github.com/kyazdani42/nvim-web-devicons"
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -245,6 +245,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/brendan/.local/share/nvim/site/pack/packer/start/tender.vim",
     url = "https://github.com/jacoborus/tender.vim"
+  },
+  ["trouble.nvim"] = {
+    loaded = true,
+    path = "/home/brendan/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
   },
   undotree = {
     loaded = true,

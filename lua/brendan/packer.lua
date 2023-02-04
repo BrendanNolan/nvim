@@ -54,7 +54,7 @@ return require('packer').startup(function(use)
 
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
 
     use { 'simrat39/rust-tools.nvim', commit = 'b50125d342b7c5b14d331476d0e0bec9b4aebcb7' }
@@ -72,4 +72,8 @@ return require('packer').startup(function(use)
 
     -- Auto Pairs --
     use {'windwp/nvim-autopairs'}
+
+    -- Error Displayer --
+    use { "folke/trouble.nvim" }  -- Docs say to require web-devicons but that didn't work for me.
+
 end)
