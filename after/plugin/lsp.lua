@@ -146,7 +146,7 @@ clangd.setup({
     on_attach = function(_, bufnr)
       local opts = {buffer = bufnr, remap = false}
       setup_lsp_keymaps(opts)
-      vim.keymap.set("n", "<leader>th", "<cmd>ClangdSwitchSourceHeader<CR>", { buffer = bufnr })
+      vim.keymap.set("n", "<leader>hh", "<cmd>ClangdSwitchSourceHeader<CR>", { buffer = bufnr })
     end,
     capabilities = completion_capabilities,
   },
