@@ -9,8 +9,13 @@ local gitui = fterm:new({
     }
 })
 
--- Use this to toggle gitui in a floating terminal
-vim.keymap.set('n', '<leader>gitui', function()
+-- Toggle gitui in a floating terminal --
+vim.keymap.set('n', '<leader>gu', function()
     gitui:toggle()
 end)
+-----------------------------------------
+
+-- Open Fugitive --
+vim.keymap.set("n", "<leader>gg", vim.cmd.Git);
+-------------------
 
