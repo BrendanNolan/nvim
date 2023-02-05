@@ -76,4 +76,8 @@ return require('packer').startup(function(use)
     -- Error Displayer --
     use { "folke/trouble.nvim" }  -- Docs say to require web-devicons but that didn't work for me.
 
+    -- Floating Terminal --
+    use { "numToStr/FTerm.nvim" }
+    -----------------------
+
 end)
