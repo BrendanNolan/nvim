@@ -46,21 +46,27 @@ vim.keymap.set("n", "<leader>lp", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
--- Make split resizing easier
-vim.keymap.set("n", "<leader>.", "10<C-w>>")
-vim.keymap.set("n", "<leader>,", "10<C-w><")
-
--- Disable arrow keys
-vim.keymap.set({'n', 'i', 'v', 'x'}, "<Left>", "<nop>")
-vim.keymap.set({'n', 'i', 'v', 'x'}, "<Right>", "<nop>")
-vim.keymap.set({'n', 'i', 'v', 'x'}, "<Up>", "<nop>")
-vim.keymap.set({'n', 'i', 'v', 'x'}, "<Down>", "<nop>")
+-- Split Windows
+vim.keymap.set("n", "<leader>hs", "<cmd>split<CR>")
+vim.keymap.set("n", "<leader>vs", "<cmd>vsplit<CR>")
 
 -- Navigate Windows
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
+
+-- Resize Windows
+vim.keymap.set("n", "<C-Left>", "5<C-w><")
+vim.keymap.set("n", "<C-Right>", "5<C-w>>")
+vim.keymap.set("n", "<C-Up>", "5<C-w>+")
+vim.keymap.set("n", "<C-Down>", "5<C-w>-")
+
+-- Disable arrow keys
+vim.keymap.set({'n', 'i', 'v', 'x'}, "<Left>", "<nop>")
+vim.keymap.set({'n', 'i', 'v', 'x'}, "<Right>", "<nop>")
+vim.keymap.set({'n', 'i', 'v', 'x'}, "<Up>", "<nop>")
+vim.keymap.set({'n', 'i', 'v', 'x'}, "<Down>", "<nop>")
 
 -- Format Code --
 local format_current_buffer = function()
