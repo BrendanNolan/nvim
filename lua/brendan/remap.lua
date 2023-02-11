@@ -68,6 +68,9 @@ vim.keymap.set({'n', 'i', 'v', 'x'}, "<Right>", "<nop>")
 vim.keymap.set({'n', 'i', 'v', 'x'}, "<Up>", "<nop>")
 vim.keymap.set({'n', 'i', 'v', 'x'}, "<Down>", "<nop>")
 
+-- Closing Other Windows --
+vim.keymap.set("n", "<leader>o", "<cmd>on<CR>", { desc = "Make current window only window." })
+
 -- Format Code --
 local format_current_buffer = function()
     local ft = vim.api.nvim_buf_get_option(0, 'filetype')
