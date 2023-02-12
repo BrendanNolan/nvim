@@ -17,6 +17,9 @@ vim.keymap.set("n", "<leader>svwm", function()
     require("vim-with-me").StopVimWithMe()
 end)
 
+vim.keymap.set("n", "<leader>nn", "o<Esc>o", { desc = 'Insert two new lines and go into insert mode in the second'})
+vim.keymap.set("n", "<leader>no", "o<Esc>o<Esc>O", { desc = 'Insert three new lines and go into insert mode in the second'})
+
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
