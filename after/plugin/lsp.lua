@@ -14,14 +14,45 @@ vim.diagnostic.config({
     virtual_text = true,
 })
 
+-- Diagnostics Handling --
+
+local disable_buffer_diagnostics_if_necessary = function(bufnr)
+	if vim.b[bufnr].diagnostics_disabled or vim.g.diagnostics_disabled then
+		vim.diagnostic.disable(bufnr)
+	end
+end
+
+local toggle_diagnostics = function(global)
+	local vars, bufnr, cmd
+	if global then
+		vars = vim.g
+		bufnr = nil
+	else
+		vars = vim.b
+		bufnr = 0
+	end
+	vars.diagnostics_disabled = not vars.diagnostics_disabled
+	if vars.diagnostics_disabled then
+        vim.api.nvim_echo({ { 'Disabling diagnostics…' } }, false, {})
+		cmd = 'disable'
+	else
+        vim.api.nvim_echo({ { 'Enabling diagnostics…' } }, false, {})
+		cmd = 'enable'
+	end
+	vim.schedule(function() vim.diagnostic[cmd](bufnr) end)
+end
+
+local toggle_buffer_disgnostics = function()
+    toggle_diagnostics(false)
+end
+
 -- Keymaps --
 local setup_lsp_keymaps = function(opts)
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
   vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
   vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
   vim.keymap.set("n", "<leader>vdf", vim.diagnostic.open_float, opts)
-  vim.keymap.set("n", "<leader>vds", vim.diagnostic.show, opts)
-  vim.keymap.set("n", "<leader>vdh", vim.diagnostic.hide, opts)
+  vim.keymap.set("n", "<leader>td", function() toggle_buffer_disgnostics() end, opts)
   vim.keymap.set("n", "[d", vim.diagnostic.goto_next, opts)
   vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, opts)
   vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
@@ -120,6 +151,7 @@ rt.setup({
   tools = { autoSetHints = false, inlay_hints = { auto = false },},
   server = {
     on_attach = function(_, bufnr)
+      disable_buffer_diagnostics_if_necessary(bufnr)
       local opts = {buffer = bufnr, remap = false}
       setup_lsp_keymaps(opts)
 
@@ -152,6 +184,7 @@ local clangd = require("clangd_extensions")
 clangd.setup({
   server = {
     on_attach = function(_, bufnr)
+      disable_buffer_diagnostics_if_necessary(bufnr)
       local opts = {buffer = bufnr, remap = false}
       setup_lsp_keymaps(opts)
       vim.keymap.set("n", "<leader>hh", "<cmd>ClangdSwitchSourceHeader<CR>", { buffer = bufnr })
@@ -164,6 +197,7 @@ clangd.setup({
 -- Lua --
 lsp.sumneko_lua.setup {
     on_attach = function(_, bufnr)
+      disable_buffer_diagnostics_if_necessary(bufnr)
       local opts = {buffer = bufnr, remap = false}
       setup_lsp_keymaps(opts)
     end,
