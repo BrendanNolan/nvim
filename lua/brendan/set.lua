@@ -33,3 +33,8 @@ vim.opt.colorcolumn = "100"
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
+-- Set Command Height To 0 (Hides Command Bar Unless You Are Using It)
+vim.opt.ch = 0
+vim.opt.ls = 0
+----------------------------------------------------------------------
+
