@@ -16,6 +16,8 @@ end)
 
 vim.keymap.set('n', '<leader>tr', builtin.resume)
 
+vim.keymap.set('n', '<leader>tkm', builtin.keymaps)
+
 require('telescope').setup{
     defaults = require("telescope.themes").get_dropdown(
         {layout_config = { width = 120 }, shorten_path = true}
