@@ -6,7 +6,7 @@ require('mason').setup()
 require('mason-lspconfig').setup({
   ensure_installed = {
     'clangd',
-    'sumneko_lua',
+    'lua_ls',
   }
 })
 
@@ -197,7 +197,7 @@ clangd.setup({
 })
 
 -- Lua --
-lsp.sumneko_lua.setup {
+lsp.lua_ls.setup {
     on_attach = function(_, bufnr)
         do_general_on_attach_stuff(bufnr)
     end,
