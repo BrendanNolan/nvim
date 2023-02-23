@@ -87,3 +87,6 @@ end
 
 vim.keymap.set('n', '<leader>fmt', format_current_buffer)
 
+vim.keymap.set('n', '<leader>cfp', "<cmd>let @+ = expand('%:p')<CR>", { desc = "Copy full path of current buffer to system clipboard" })
+vim.keymap.set('n', '<leader>crp', "<cmd>let @+ = expand('%')<CR>", { desc = "Copy relative path of current buffer to system clipboard" })
+
