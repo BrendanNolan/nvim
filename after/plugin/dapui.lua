@@ -5,5 +5,8 @@ dap.listeners.after.event_initialized["dapui_config"] = function()
   dapui.open()
 end
 
-vim.keymap.set("n", "<leader>cdb", dapui.close)
+vim.keymap.set("n", "<leader>cdb", function()
+    dap.terminate()
+    dapui.close()
+end)
 
