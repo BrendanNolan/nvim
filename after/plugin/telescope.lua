@@ -10,9 +10,10 @@ vim.keymap.set('n', '<leader>fbf', builtin.current_buffer_fuzzy_find)  -- Fuzzy 
 vim.keymap.set('n', '<leader>gf', builtin.live_grep)  -- Global Find
 vim.keymap.set('n', '<leader>fgf', function() builtin.grep_string{ shorten_path = true, word_match = "-w", only_sort_text = true, search = '' } end)  -- Fuzzy Global Find
 vim.keymap.set('n', '<leader>cwf', builtin.grep_string)  -- Current Word Find: find word under cursor (non fuzzy)
-vim.keymap.set('n', '<leader>wf', function()  -- Word Find: Find Any Word (prompt appears) (not fuzzy)
-	builtin.grep_string({ search = vim.fn.input("grep > ") })
-end)
+vim.keymap.set('n', '<leader>fw', function()
+        builtin.grep_string({ search = vim.fn.input("grep > ") })
+    end,
+    {desc = "Find Word (prompt appears) (not fuzzy)"})
 
 vim.keymap.set('n', '<leader>tr', builtin.resume)
 
