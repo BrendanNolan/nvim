@@ -49,6 +49,9 @@ vim.keymap.set("n", "<leader>cb", function()
     dap.set_breakpoint(vim.fn.input("Breakpoint Condition: "))
 end)
 
+vim.fn.sign_define('DapBreakpoint', {text='🔴', texthl='', linehl='', numhl=''})
+vim.fn.sign_define('DapBreakpointCondition', {text='🔵', texthl='', linehl='', numhl=''})
+
 local widgets = require("dap.ui.widgets")
 vim.keymap.set("n", "<leader>i", widgets.hover, {desc = "DAP Inspect"})
 
