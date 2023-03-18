@@ -89,4 +89,6 @@ return require('packer').startup(function(use)
         requires = "neovim/nvim-lspconfig"
     }
 
+    use { "kylechui/nvim-surround" }
+
 end)
