@@ -80,4 +80,8 @@ return require('packer').startup(function(use)
     use 'voldikss/vim-floaterm'
     -----------------------
 
+    -- vim-test --
+    use 'vim-test/vim-test'
+    --------------
+
 end)
