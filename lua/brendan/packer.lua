@@ -84,4 +84,9 @@ return require('packer').startup(function(use)
     use 'vim-test/vim-test'
     --------------
 
+    use {
+        "SmiteshP/nvim-navic",
+        requires = "neovim/nvim-lspconfig"
+    }
+
 end)

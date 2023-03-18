@@ -141,10 +141,11 @@ cmp.setup.cmdline(':', {
 local completion_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- General on_attach Stuff ---
-local do_general_on_attach_stuff = function(bufnr)
+local do_general_on_attach_stuff = function(client, bufnr)
     disable_buffer_diagnostics_if_necessary(bufnr)
     local opts = {buffer = bufnr, remap = false}
     setup_lsp_keymaps(opts)
+    require('nvim-navic').attach(client, bufnr)
 end
 
 -- Rust Tools --
@@ -157,8 +158,8 @@ local liblldb_path = extension_path .. 'lldb/lib/liblldb.so'
 rt.setup({
   tools = { autoSetHints = false, inlay_hints = { auto = false },},
   server = {
-    on_attach = function(_, bufnr)
-      do_general_on_attach_stuff(bufnr)
+    on_attach = function(client, bufnr)
+      do_general_on_attach_stuff(client, bufnr)
       vim.keymap.set("n", "<leader>kk", rt.hover_actions.hover_actions, { buffer = bufnr })
       vim.keymap.set("n", "<leader>aa", rt.code_action_group.code_action_group, { buffer = bufnr })
       vim.keymap.set("n", "<leader>rdb", rt.debuggables.debuggables)
@@ -187,8 +188,8 @@ rt.setup({
 local clangd = require("clangd_extensions")
 clangd.setup({
   server = {
-    on_attach = function(_, bufnr)
-      do_general_on_attach_stuff(bufnr)
+    on_attach = function(client, bufnr)
+      do_general_on_attach_stuff(client, bufnr)
       vim.keymap.set("n", "<leader>hh", "<cmd>ClangdSwitchSourceHeader<CR>", { buffer = bufnr })
     end,
     capabilities = completion_capabilities,
@@ -198,8 +199,8 @@ clangd.setup({
 
 -- Lua --
 lsp.lua_ls.setup {
-    on_attach = function(_, bufnr)
-        do_general_on_attach_stuff(bufnr)
+    on_attach = function(client, bufnr)
+        do_general_on_attach_stuff(client, bufnr)
     end,
     settings = {
         Lua = {
