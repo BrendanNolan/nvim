@@ -91,4 +91,12 @@ return require('packer').startup(function(use)
 
     use { "kylechui/nvim-surround" }
 
+    use {
+        "ThePrimeagen/refactoring.nvim",
+        requires = {
+            {"nvim-lua/plenary.nvim"},
+            {"nvim-treesitter/nvim-treesitter"}
+        }
+    }
+
 end)
