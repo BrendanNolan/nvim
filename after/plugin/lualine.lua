@@ -1,8 +1,12 @@
 local navic = require('nvim-navic')
+local custom_gruvbox = require('lualine.themes.gruvbox')
+custom_gruvbox.insert.c.bg = '#51a8c5'
+custom_gruvbox.visual.c.bg = '#de9a1e'
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'auto',
+    theme = custom_gruvbox,
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {
