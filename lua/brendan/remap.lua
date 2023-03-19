@@ -95,3 +95,5 @@ vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', {desc = "Write"})
 vim.keymap.set('n', '<leader>q', '<cmd>q<CR>', {desc = "Quit"})
 vim.keymap.set('n', '<leader>ct', '<cmd>checktime<CR>', {desc = "checktime"})
 
+vim.keymap.set('n', '<leader>cgo', '<cmd>compiler cargo<CR>', {desc = 'Set make command to use cargo'})
+
