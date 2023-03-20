@@ -44,8 +44,8 @@ vim.keymap.set("n", "<F2>", dap.step_over)
 vim.keymap.set("n", "<F3>", dap.step_out)
 vim.keymap.set("n", "<F4>", dap.continue)
 
-vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint)
-vim.keymap.set("n", "<leader>cb", function()
+vim.keymap.set("n", "<leader>bb", dap.toggle_breakpoint)
+vim.keymap.set("n", "<leader>bc", function()
     dap.set_breakpoint(vim.fn.input("Breakpoint Condition: "))
 end)
 
