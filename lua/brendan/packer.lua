@@ -91,4 +91,6 @@ return require('packer').startup(function(use)
 
     use { "kylechui/nvim-surround" }
 
+    use 'nvim-tree/nvim-web-devicons'
+
 end)
