@@ -19,6 +19,12 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+  refactor = {
+    highlight_definitions = {
+      enable = true,
+      clear_on_cursor_move = true,  -- Set to false if you have an `updatetime` of ~100
+    },
+  },
   textobjects = {
       move = {
           enable = true,

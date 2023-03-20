@@ -46,6 +46,7 @@ return require('packer').startup(function(use)
     use 'Mofiqul/dracula.nvim'
 
     use('nvim-treesitter/nvim-treesitter', { run = 'TSUpdate' })
+    use('nvim-treesitter/nvim-treesitter-refactor')
     use('nvim-treesitter/nvim-treesitter-textobjects')
     use('nvim-treesitter/playground')
     use('theprimeagen/harpoon')
