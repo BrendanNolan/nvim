@@ -1,5 +1,7 @@
 local dap = require("dap")
 
+dap.defaults.fallback.exception_breakpoints = { 'all' }
+
 dap.adapters.lldb = {
 	type = "executable",
 	command = vim.env.HOME .. "/.vscode/extensions/vadimcn.vscode-lldb-1.8.1/adapter/codelldb",
