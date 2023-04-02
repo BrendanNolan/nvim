@@ -86,7 +86,10 @@ vim.keymap.set('n', '<leader>crp', "<cmd>let @+ = expand('%')<CR>", { desc = "Co
 vim.keymap.set('n', 's', 'A;<Esc>', {desc = "Put semicolon at end of line"})
 vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', {desc = "Write"})
 vim.keymap.set('n', '<leader>q', '<cmd>q<CR>', {desc = "Quit"})
-vim.keymap.set('n', '<leader>ct', '<cmd>checktime<CR>', {desc = "checktime"})
+vim.keymap.set('n', '<leader>ct', function()
+    vim.cmd.checktime()
+    vim.api.nvim_echo({ { 'Ran checktime' } }, false, {})
+end, {desc = "checktime"})
 
 vim.keymap.set('n', '<leader>cgo', '<cmd>compiler cargo<CR>', {desc = 'Set make command to use cargo'})
 
