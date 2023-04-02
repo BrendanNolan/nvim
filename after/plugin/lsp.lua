@@ -161,7 +161,7 @@ rt.setup({
     on_attach = function(client, bufnr)
       do_general_on_attach_stuff(client, bufnr)
       vim.keymap.set("n", "<leader>kk", rt.hover_actions.hover_actions, { buffer = bufnr })
-      vim.keymap.set("n", "<leader>aa", rt.code_action_group.code_action_group, { buffer = bufnr })
+      vim.keymap.set({"n", "v"}, "<leader>aa", rt.code_action_group.code_action_group, { buffer = bufnr })
       vim.keymap.set("n", "<leader>rdb", rt.debuggables.debuggables)
       vim.keymap.set("n", "<leader>rr", rt.runnables.runnables)
     end,
