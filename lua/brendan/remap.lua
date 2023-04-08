@@ -84,12 +84,17 @@ vim.keymap.set('n', '<leader>cfp', "<cmd>let @+ = expand('%:p')<CR>", { desc = "
 vim.keymap.set('n', '<leader>crp', "<cmd>let @+ = expand('%')<CR>", { desc = "Copy relative path of current buffer to system clipboard" })
 
 vim.keymap.set('n', 's', 'A;<Esc>', {desc = "Put semicolon at end of line"})
+vim.keymap.set('n', '<leader>cs', 'A<Space>{<CR><CR>}<Esc>ki<Tab>', {desc = 'Curly Scope: open scope braces'})
 vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', {desc = "Write"})
 vim.keymap.set('n', '<leader>q', '<cmd>q<CR>', {desc = "Quit"})
 vim.keymap.set('n', '<leader>ct', function()
     vim.cmd.checktime()
     vim.api.nvim_echo({ { 'Ran checktime' } }, false, {})
 end, {desc = "checktime"})
+vim.keymap.set('n', '<leader><leader>', function()
+    vim.cmd.checktime()
+    vim.api.nvim_echo({ { '' } }, false, {})
+end, {desc = "Clear command text"})
 
 vim.keymap.set('n', '<leader>cgo', '<cmd>compiler cargo<CR>', {desc = 'Set make command to use cargo'})
 
