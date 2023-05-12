@@ -98,3 +98,5 @@ end, {desc = "Clear command text"})
 
 vim.keymap.set('n', '<leader>cgo', '<cmd>compiler cargo<CR>', {desc = 'Set make command to use cargo'})
 
+vim.keymap.set('n', '<leader>ll', '<cmd>ls<CR>', {desc = ':ls'})
+
