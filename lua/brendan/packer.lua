@@ -109,4 +109,6 @@ return require('packer').startup(function(use)
 
     use { "tpope/vim-obsession" }
 
+    use { "tpope/vim-vinegar" }
+
 end)
