@@ -98,4 +98,13 @@ return require('packer').startup(function(use)
 
     use 'simrat39/symbols-outline.nvim'
 
+    use {
+        "cbochs/portal.nvim",
+        -- Optional dependencies
+        requires = {
+            "cbochs/grapple.nvim",
+            "ThePrimeagen/harpoon",
+        },
+    }
+
 end)
