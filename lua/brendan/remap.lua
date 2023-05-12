@@ -73,8 +73,10 @@ local format_current_buffer = function()
     local file_path = vim.api.nvim_buf_get_name(0)
     if ft == 'rust' then
         vim.api.nvim_command("silent !cargo +nightly fmt -- " .. file_path)
+        vim.api.nvim_echo({{'Formatted Rust Code'}}, false, {})
     elseif ft == 'cpp' then
         vim.api.nvim_command("silent !clang-format -i " .. file_path)
+        vim.api.nvim_echo({{'Formatted CPP Code'}}, false, {})
     end
 end
 
