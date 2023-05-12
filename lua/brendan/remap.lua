@@ -102,3 +102,8 @@ vim.keymap.set('n', '<leader>ll', '<cmd>ls<CR>', {desc = ':ls'})
 vim.keymap.set('n', '<leader>nb', '<cmd>bnext<CR>', {desc = 'Next Buffer'})
 vim.keymap.set('n', '<leader>pb', '<cmd>bprevious<CR>', {desc = 'Previous Buffer'})
 
+-- Put current function/class at top of file
+-- Uses recursive mapping to lalow use of existing '[f' and '[c' treesitter mappings
+vim.api.nvim_set_keymap('n', '<leader>fu', '[fz<CR>', { noremap = false, desc = 'Put current function at top of file'})
+vim.api.nvim_set_keymap('n', '<leader>cu', '[cz<CR>', { noremap = false, desc = 'Put current class at top of file'})
+
