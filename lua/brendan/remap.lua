@@ -92,7 +92,6 @@ vim.keymap.set('n', '<leader>ct', function()
     vim.api.nvim_echo({ { 'Ran checktime' } }, false, {})
 end, {desc = "checktime"})
 vim.keymap.set('n', '<leader><leader>', function()
-    vim.cmd.checktime()
     vim.api.nvim_echo({ { '' } }, false, {})
 end, {desc = "Clear command text"})
 
