@@ -99,3 +99,6 @@ vim.keymap.set('n', '<leader>cgo', '<cmd>compiler cargo<CR>', {desc = 'Set make 
 
 vim.keymap.set('n', '<leader>ll', '<cmd>ls<CR>', {desc = ':ls'})
 
+vim.keymap.set('n', '<leader>nb', '<cmd>bnext<CR>', {desc = 'Next Buffer'})
+vim.keymap.set('n', '<leader>pb', '<cmd>bprevious<CR>', {desc = 'Previous Buffer'})
+
