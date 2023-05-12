@@ -111,4 +111,6 @@ return require('packer').startup(function(use)
 
     use { "tpope/vim-vinegar" }
 
+    use { "tpope/vim-sleuth" }
+
 end)
