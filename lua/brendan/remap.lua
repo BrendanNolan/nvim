@@ -106,6 +106,9 @@ vim.keymap.set('n', '<leader>pb', '<cmd>bprevious<CR>', {desc = 'Previous Buffer
 
 -- Put current function/class at top of file
 -- Uses recursive mapping to lalow use of existing '[f' and '[c' treesitter mappings
-vim.api.nvim_set_keymap('n', '<leader>fu', '[fz<CR>', { noremap = false, desc = 'Put current function at top of file'})
-vim.api.nvim_set_keymap('n', '<leader>cu', '[cz<CR>', { noremap = false, desc = 'Put current class at top of file'})
+-- These commands begin with l because for some reason, having the cursor at col 0 at the
+-- beginning of the function/class will result in the previous function/class being put
+-- at the top of the file.
+vim.api.nvim_set_keymap('n', '<leader>fu', 'l[fz<CR>', { noremap = false, desc = 'Put current function at top of file'})
+vim.api.nvim_set_keymap('n', '<leader>cu', 'l[cz<CR>', { noremap = false, desc = 'Put current class at top of file'})
 
