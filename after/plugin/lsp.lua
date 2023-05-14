@@ -167,6 +167,8 @@ rt.setup({
       vim.keymap.set({"n", "v"}, "<leader>aa", rt.code_action_group.code_action_group, { buffer = bufnr })
       vim.keymap.set("n", "<leader>rdb", rt.debuggables.debuggables)
       vim.keymap.set("n", "<leader>rr", rt.runnables.runnables)
+      vim.keymap.set("n", "<leader>rsh", rt.inlay_hints.set)
+      vim.keymap.set("n", "<leader>rhh", rt.inlay_hints.unset)
     end,
     capabilities = completion_capabilities,
     cmd = { "rustup", "run", "stable", "rust-analyzer" },
