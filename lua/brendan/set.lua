@@ -35,6 +35,3 @@ vim.opt.splitbelow = true
 
 vim.opt.autoread = true
 
-vim.o.timeout = true
-vim.o.timeoutlen = 300
-
