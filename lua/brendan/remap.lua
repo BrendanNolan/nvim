@@ -30,7 +30,7 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux new tmux-sessionizer<CR>")
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>flsp", vim.lsp.buf.format)
 
 -- Quickfix --
 vim.keymap.set("n", "<leader>co", "<cmd>copen<CR>zz")
