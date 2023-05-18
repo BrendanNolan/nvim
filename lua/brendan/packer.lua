@@ -113,4 +113,6 @@ return require('packer').startup(function(use)
 
     use { "tpope/vim-sleuth" }
 
+    use { "github/copilot.vim" }
+
 end)
