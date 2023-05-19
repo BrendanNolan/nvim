@@ -14,6 +14,8 @@ vim.diagnostic.config({
     virtual_text = true,
 })
 
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {border="rounded"})
+
 -- Diagnostics Handling --
 
 local disable_buffer_diagnostics_if_necessary = function(bufnr)
