@@ -93,7 +93,7 @@ vim.keymap.set('n', '<leader>ct', function()
     vim.cmd.checktime()
     vim.api.nvim_echo({ { 'Ran checktime' } }, false, {})
 end, {desc = "checktime"})
-vim.keymap.set('n', '<leader><leader>', function()
+vim.keymap.set('n', '<leader>cx', function()
     vim.api.nvim_echo({ { '' } }, false, {})
 end, {desc = "Clear command text"})
 
@@ -111,4 +111,6 @@ vim.keymap.set('n', '<leader>pb', '<cmd>bprevious<CR>', {desc = 'Previous Buffer
 -- at the top of the file.
 vim.api.nvim_set_keymap('n', '<leader>fu', 'l[fz<CR>', { noremap = false, desc = 'Put current function at top of file'})
 vim.api.nvim_set_keymap('n', '<leader>cu', 'l[cz<CR>', { noremap = false, desc = 'Put current class at top of file'})
+
+vim.keymap.set('n', '<leader><leader>', 'z<CR>', {desc="Move cursor line to top of screen"})
 
