@@ -171,6 +171,8 @@ rt.setup({
       vim.keymap.set("n", "<leader>rr", rt.runnables.runnables)
       vim.keymap.set("n", "<leader>rsh", rt.inlay_hints.set)
       vim.keymap.set("n", "<leader>rhh", rt.inlay_hints.unset)
+      vim.keymap.set("n", "<leader>rmu", "<cmd>RustMoveItemUp<CR>")
+      vim.keymap.set("n", "<leader>rmd", "<cmd>RustMoveItemDown<CR>")
     end,
     capabilities = completion_capabilities,
     cmd = { "rustup", "run", "stable", "rust-analyzer" },
