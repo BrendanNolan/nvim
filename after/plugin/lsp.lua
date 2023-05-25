@@ -15,7 +15,6 @@ vim.diagnostic.config({
 })
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {border="rounded"})
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.handlers.hover, {border="rounded"})
 
 -- Diagnostics Handling --
 
