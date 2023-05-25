@@ -34,8 +34,8 @@ vim.keymap.set("n", "<leader>flsp", vim.lsp.buf.format)
 
 -- Quickfix --
 vim.keymap.set("n", "<leader>co", "<cmd>copen<CR>zz")
-vim.keymap.set("n", "<leader>cn", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<leader>cp", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<Up>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<Down>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<leader>ln", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>lp", "<cmd>lprev<CR>zz")
 
@@ -58,11 +58,9 @@ vim.keymap.set("n", "<C-Right>", "5<C-w>>")
 vim.keymap.set("n", "<C-Up>", "5<C-w>+")
 vim.keymap.set("n", "<C-Down>", "5<C-w>-")
 
--- Disable arrow keys
+-- Disable Left And Right Arrow Keys
 vim.keymap.set({'n', 'i', 'v', 'x'}, "<Left>", "<nop>")
 vim.keymap.set({'n', 'i', 'v', 'x'}, "<Right>", "<nop>")
-vim.keymap.set({'n', 'i', 'v', 'x'}, "<Up>", "<nop>")
-vim.keymap.set({'n', 'i', 'v', 'x'}, "<Down>", "<nop>")
 
 -- Closing Other Windows --
 vim.keymap.set("n", "<leader>o", "<cmd>on<CR>", { desc = "Make current window only window." })
