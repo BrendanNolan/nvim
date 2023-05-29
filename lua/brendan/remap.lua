@@ -95,7 +95,13 @@ vim.keymap.set('n', '<leader>cx', function()
     vim.api.nvim_echo({ { '' } }, false, {})
 end, {desc = "Clear command text"})
 
-vim.keymap.set('n', '<leader>cgo', '<cmd>compiler cargo<CR>', {desc = 'Set make command to use cargo'})
+vim.keymap.set('n',
+    '<leader>cgo',
+    function()
+        vim.cmd('compiler cargo')
+        vim.api.nvim_echo({{'Set make command to use cargo'}}, false, {})
+    end,
+    {desc = 'Set make command to use cargo'})
 
 vim.keymap.set('n', '<leader>ll', '<cmd>ls<CR>', {desc = ':ls'})
 
