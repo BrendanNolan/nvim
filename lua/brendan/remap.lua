@@ -40,7 +40,7 @@ vim.keymap.set("n", "<leader>ln", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>lp", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>sb", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+vim.keymap.set("n", "<leader>xp", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Split Windows
 vim.keymap.set("n", "<leader>hs", "<cmd>split<CR>")
