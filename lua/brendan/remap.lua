@@ -39,7 +39,7 @@ vim.keymap.set("n", "<Down>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<leader>ln", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>lp", "<cmd>lprev<CR>zz")
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>sb", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Split Windows
@@ -114,7 +114,7 @@ vim.keymap.set('n', '<leader>pb', '<cmd>bprevious<CR>', {desc = 'Previous Buffer
 -- beginning of the function/class will result in the previous function/class being put
 -- at the top of the file.
 vim.api.nvim_set_keymap('n', '<leader>fu', 'l[fz<CR>', { noremap = false, desc = 'Put current function at top of file'})
-vim.api.nvim_set_keymap('n', '<leader>cu', 'l[cz<CR>', { noremap = false, desc = 'Put current class at top of file'})
+vim.api.nvim_set_keymap('n', '<leader>su', 'l[sz<CR>', { noremap = false, desc = 'Put current class at top of file'})
 
 vim.keymap.set('n', '<leader><leader>', 'z<CR>', {desc="Move cursor line to top of screen"})
 
