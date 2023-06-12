@@ -42,4 +42,6 @@ require'nvim-treesitter.configs'.setup {
 }
 
 require'treesitter-context'.setup{}
+-- Make context background grey
+vim.cmd("hi TreesitterContext guibg=Grey")
 
