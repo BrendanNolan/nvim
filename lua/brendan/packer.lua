@@ -44,6 +44,8 @@ return require('packer').startup(function(use)
     use { "chriskempson/base16-vim" }
     use { "jacoborus/tender.vim" }
     use 'Mofiqul/dracula.nvim'
+    use { "loctvl842/monokai-pro.nvim" }
+    use { 'tanvirtin/monokai.nvim' }
 
     use('nvim-treesitter/nvim-treesitter', { run = 'TSUpdate' })
     use('nvim-treesitter/nvim-treesitter-context')
