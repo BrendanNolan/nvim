@@ -161,7 +161,10 @@ local codelldb_path = extension_path .. 'adapter/codelldb'
 local liblldb_path = extension_path .. 'lldb/lib/liblldb.so'
 
 rt.setup({
-  tools = { autoSetHints = false, inlay_hints = { auto = false },},
+  tools = { autoSetHints = false,
+    inlay_hints = { auto = false },
+    hover_actions = { auto_focus = true }
+  },
   server = {
     on_attach = function(client, bufnr)
       do_general_on_attach_stuff(client, bufnr)
