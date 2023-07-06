@@ -26,11 +26,31 @@ vim.keymap.set('n', '<leader>tkm', builtin.keymaps)
 
 vim.keymap.set('n', '<leader>tb', function() builtin.buffers({sort_mru=true}) end)
 
+local file_browser_actions = require("telescope").extensions.file_browser.actions
 require('telescope').setup{
-    defaults = require("telescope.themes").get_dropdown(
-        {layout_config = { width = 120 }, shorten_path = true}
-    )
+  defaults = require("telescope.themes").get_dropdown(
+    {layout_config = { width = 120 }, shorten_path = true}
+  ),
+  extensions = {
+    file_browser = {
+      mappings = {
+        ['n'] = {
+          ['-'] = file_browser_actions.goto_parent_dir,
+          ['gh'] = file_browser_actions.toggle_hidden,
+        },
+      },
+    },
+  },
 }
 
 require('telescope').load_extension('fzf')
 
+require('telescope').load_extension('file_browser')
+local file_browser_theme =
+  require('telescope.themes').get_ivy({ path = "%:p:h", select_buffer = true, initial_mode = "normal" })
+vim.keymap.set(
+  "n",
+  "<leader>fe",
+  function() require("telescope").extensions.file_browser.file_browser(file_browser_theme) end,
+  { desc = "open file_browser with the path of the current buffer" }
+)
