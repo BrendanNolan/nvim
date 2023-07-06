@@ -111,7 +111,7 @@ return require('packer').startup(function(use)
 
     use { "tpope/vim-obsession" }
 
-    use { "tpope/vim-vinegar" }
+    use { "stevearc/oil.nvim" }
 
     use { "tpope/vim-sleuth" }
 
