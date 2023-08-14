@@ -13,6 +13,8 @@ require('mason-lspconfig').setup({
   }
 })
 
+vim.keymap.set("n", "<leader>lsp", "<cmd>LspInfo<CR>")
+
 vim.diagnostic.config({
     virtual_text = true,
 })
