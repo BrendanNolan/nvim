@@ -1,7 +1,7 @@
 # Before Even Opening Nvim
 Install up-to-date node
 Install ripgrep
-Install rust_analyzer with rustup
+Install rust_analyzer with `rustup component add rust-analyzer`
 Install treesitter-cli with cargo
 
 Install packer
