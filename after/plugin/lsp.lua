@@ -13,6 +13,11 @@ require('mason-lspconfig').setup({
   }
 })
 
+-- Do not move this to dap.lua - it must run after setting up Mason. --
+require("mason-nvim-dap").setup({
+    ensure_installed = { "codelldb" }
+})
+
 vim.keymap.set("n", "<leader>lsp", "<cmd>LspInfo<CR>")
 
 vim.diagnostic.config({
