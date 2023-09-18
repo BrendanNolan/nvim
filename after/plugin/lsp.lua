@@ -1,22 +1,7 @@
 -- LSP --
 local lsp = require("lspconfig")
 
-require('mason').setup()
-
-require('mason-lspconfig').setup({
-  ensure_installed = {
-    'bashls',
-    'clangd',
-    -- 'jedi_language_server', Not working for some reason
-    'lua_ls',
-    'perlnavigator',
-  }
-})
-
--- Do not move this to dap.lua - it must run after setting up Mason. --
-require("mason-nvim-dap").setup({
-    ensure_installed = { "codelldb" }
-})
+SetupMasonIfNotAlreadyDone()
 
 vim.keymap.set("n", "<leader>lsp", "<cmd>LspInfo<CR>")
 
@@ -166,9 +151,8 @@ end
 -- Rust Tools --
 local rt = require("rust-tools")
 
-local extension_path = vim.env.HOME .. '/.vscode/extensions/vadimcn.vscode-lldb-1.8.1/'
-local codelldb_path = extension_path .. 'adapter/codelldb'
-local liblldb_path = extension_path .. 'lldb/lib/liblldb.so'
+local codelldb_path = GetCodelldbPath()
+local liblldb_path = GetLiblldbPath()
 
 rt.setup({
   tools = { autoSetHints = false,
