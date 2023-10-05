@@ -86,10 +86,14 @@ local find_launch_json = function ()
     return nil
 end
 
-vim.keymap.set("n", "<leader>lj", function()
-  local launchjs = find_launch_json()
-  if launchjs then
-    require('dap.ext.vscode').load_launchjs(launchjs, { rt_lldb = {'rust'}, cppdbg = {'c', 'cpp'} })
-  end
-end)
+local load_launch_json = function ()
+    local launchjs = find_launch_json()
+    if launchjs then
+        require('dap.ext.vscode').load_launchjs(launchjs, { rt_lldb = {'rust'}, cppdbg = {'c', 'cpp'} })
+    end
+end
+
+vim.keymap.set("n", "<leader>lj", load_launch_json, {desc = "Load launch.json"})
+
+load_launch_json()
 
