@@ -66,3 +66,30 @@ vim.keymap.set("n", "<leader>i", widgets.hover, {desc = "DAP Inspect"})
 
 require("nvim-dap-virtual-text").setup()
 
+local file_exists = function (filename)
+    local file = io.open(filename, "r")
+    if file then
+        io.close(file)
+        return true
+    else
+        return false
+    end
+end
+
+local find_launch_json = function ()
+    if file_exists("launch.json") then
+        return "launch.json"
+    end
+    if file_exists(".vscode/launch.json") then
+        return ".vscode/launch.json"
+    end
+    return nil
+end
+
+vim.keymap.set("n", "<leader>lj", function()
+  local launchjs = find_launch_json()
+  if launchjs then
+    require('dap.ext.vscode').load_launchjs(launchjs, { rt_lldb = {'rust'}, cppdbg = {'c', 'cpp'} })
+  end
+end)
+
