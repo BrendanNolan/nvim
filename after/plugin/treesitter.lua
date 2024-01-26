@@ -26,18 +26,27 @@ require'nvim-treesitter.configs'.setup {
     },
   },
   textobjects = {
-      move = {
-          enable = true,
-          set_jumps = true, -- whether to set jumps in the jumplist
-          goto_next_start = {
-              ["]f"] = "@function.outer",
-              ["]s"] = "@class.outer",
-          },
-          goto_previous_start = {
-              ["[f"] = "@function.outer",
-              ["[s"] = "@class.outer",
-          },
+    move = {
+      enable = true,
+      set_jumps = true, -- whether to set jumps in the jumplist
+      goto_next_start = {
+        ["]f"] = "@function.outer",
+        ["]s"] = "@class.outer",
       },
+      goto_previous_start = {
+        ["[f"] = "@function.outer",
+        ["[s"] = "@class.outer",
+      },
+    },
+    swap = {
+      enable = true,
+      swap_next = {
+        ["]a"] = "@parameter.inner",
+      },
+      swap_previous = {
+        ["[a"] = "@parameter.inner",
+      },
+    },
   },
 }
 
