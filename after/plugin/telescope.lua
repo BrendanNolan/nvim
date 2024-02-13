@@ -19,12 +19,10 @@ vim.keymap.set('n', '<leader>fw', function()
         builtin.grep_string({ search = vim.fn.input("grep > ") })
     end,
     {desc = "Find Word (prompt appears) (not fuzzy)"})
-
 vim.keymap.set('n', '<leader>tr', builtin.resume)
-
 vim.keymap.set('n', '<leader>tkm', builtin.keymaps)
-
 vim.keymap.set('n', '<leader>tb', function() builtin.buffers({sort_mru=true}) end)
+vim.keymap.set('n', '<leader>tj', builtin.jumplist, {desc = "Telescope show jumplist"})
 
 local file_browser_actions = require("telescope").extensions.file_browser.actions
 require('telescope').setup{
