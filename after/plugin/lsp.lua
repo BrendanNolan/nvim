@@ -192,20 +192,13 @@ rt.setup({
   },
 })
 
-
-
 -- Clangd --
-local clangd = require("clangd_extensions")
-clangd.setup({
-  server = {
+lsp.clangd.setup{
     on_attach = function(client, bufnr)
-      do_general_on_attach_stuff(client, bufnr)
-      vim.keymap.set("n", "<leader>hh", "<cmd>ClangdSwitchSourceHeader<CR>", { buffer = bufnr })
+        do_general_on_attach_stuff(client, bufnr)
+        vim.keymap.set("n", "<leader>hh", "<cmd>ClangdSwitchSourceHeader<CR>", { buffer = bufnr })
     end,
-    capabilities = completion_capabilities,
-  },
-  extensions = { autoSetHints = false },
-})
+}
 
 -- Lua --
 lsp.lua_ls.setup {
