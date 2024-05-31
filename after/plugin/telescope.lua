@@ -28,7 +28,15 @@ vim.keymap.set('n', '<leader>tj', builtin.jumplist, {desc = "Telescope show jump
 local file_browser_actions = require("telescope").extensions.file_browser.actions
 require('telescope').setup{
   defaults = require("telescope.themes").get_dropdown(
-    {layout_config = { width = 120 }, shorten_path = true}
+    {
+      layout_config = { width = 120 },
+      shorten_path = true,
+      mappings = {
+        n = {
+          ['<leader>tcb'] = require('telescope.actions').delete_buffer,  -- close buffer from buffer picker
+        }
+      }
+    }
   ),
   extensions = {
     file_browser = {
