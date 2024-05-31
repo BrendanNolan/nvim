@@ -51,6 +51,7 @@ return require('packer').startup(function(use)
     use 'Mofiqul/dracula.nvim'
     use { "loctvl842/monokai-pro.nvim" }
     use { 'tanvirtin/monokai.nvim' }
+    use { 'eldritch-theme/eldritch.nvim' }
 
     use('nvim-treesitter/nvim-treesitter', { run = 'TSUpdate' })
     use('nvim-treesitter/nvim-treesitter-context')
