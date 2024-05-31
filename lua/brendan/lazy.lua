@@ -124,6 +124,8 @@ local plugins = {
             require('render-markdown').setup({})
         end,
     },
+
+    "ggandor/leap.nvim",
 }
 
 local opts = {}
