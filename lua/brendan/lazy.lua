@@ -32,7 +32,7 @@ local plugins = {
 
     {
         'nvim-telescope/telescope.nvim',
-        dependencies = { { 'nvim-lua/plenary.nvim' } }
+        dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope-live-grep-args.nvim' }
     },
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     {
