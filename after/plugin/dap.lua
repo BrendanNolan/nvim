@@ -1,6 +1,6 @@
 local dap = require("dap")
 
-dap.defaults.fallback.exception_breakpoints = { 'all' }
+dap.defaults.fallback.exception_breakpoints = { 'all', 'rust_panic' }
 
 SetupMasonIfNotAlreadyDone()
 
