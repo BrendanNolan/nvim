@@ -23,6 +23,9 @@ require'nvim-treesitter.configs'.setup {
   refactor = {
     highlight_definitions = {
       enable = true,
+      disable = function(_, bufnr)  -- Disable in treesitter-refactor in large buffers
+        return vim.api.nvim_buf_line_count(bufnr) > 1000
+      end,
       clear_on_cursor_move = true,  -- Set to false if you have an `updatetime` of ~100
     },
   },
