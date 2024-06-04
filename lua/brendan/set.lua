@@ -34,4 +34,4 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 vim.opt.autoread = true
-
+vim.g.gruvbox_material_transparent_background = 1
