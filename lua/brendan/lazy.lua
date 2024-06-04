@@ -114,8 +114,6 @@ local plugins = {
 
      "tpope/vim-sleuth",
 
-     "github/copilot.vim",
-
     {
         'MeanderingProgrammer/markdown.nvim',
         name = 'render-markdown', -- Only needed if you have another plugin named markdown.nvim
