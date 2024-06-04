@@ -41,7 +41,6 @@ local plugins = {
     },
 
      "ellisonleao/gruvbox.nvim",
-     "sainnhe/gruvbox-material",
      "Mofiqul/vscode.nvim",
      "chriskempson/base16-vim",
      "jacoborus/tender.vim",
