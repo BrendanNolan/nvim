@@ -115,9 +115,16 @@ vim.api.nvim_set_keymap('n', '<leader>fu', 'l[fz<CR>', { noremap = false, desc =
 vim.api.nvim_set_keymap('n', '<leader>su', 'l[sz<CR>', { noremap = false, desc = 'Put current class at top of file'})
 
 vim.keymap.set('n', '<leader><leader>', 'z<CR>', {desc="Move cursor line to top of screen"})
-vim.keymap.set('n', '<leader>hsy', function()
-    vim.opt.hlsearch = true
-end, {desc = 'Set search highlighting'})
-vim.keymap.set('n', '<leader>hsn', function()
-    vim.opt.hlsearch = false
-end, {desc = 'Unset search highlighting'})
+
+vim.keymap.set('n',
+    '<leader>hsy',
+    function()
+        vim.opt.hlsearch = true
+    end,
+    {desc = 'Set search highlighting'})
+vim.keymap.set('n',
+    '<leader>hsn',
+    function()
+        vim.opt.hlsearch = false
+    end,
+    {desc = 'Unset search highlighting'})
