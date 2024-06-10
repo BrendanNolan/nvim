@@ -78,9 +78,6 @@ end
 
 vim.keymap.set('n', '<leader>fmt', format_current_buffer)
 
-vim.keymap.set('n', '<leader>cfp', "<cmd>let @+ = expand('%:p')<CR>", { desc = "Copy full path of current buffer to system clipboard" })
-vim.keymap.set('n', '<leader>crp', "<cmd>let @+ = expand('%')<CR>", { desc = "Copy relative path of current buffer to system clipboard" })
-
 vim.keymap.set('n', '<leader>;', 'A;<Esc>', {desc = "Put semicolon at end of line"})
 vim.keymap.set('n', '<leader>cs', 'A<Space>{<CR><CR>}<Esc>ki<Tab>', {desc = 'Curly Scope: open scope braces'})
 vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', {desc = "Write"})
@@ -128,3 +125,14 @@ vim.keymap.set('n',
         vim.opt.hlsearch = false
     end,
     {desc = 'Unset search highlighting'})
+
+vim.keymap.set('n',
+    "<leader>cp",
+    function()
+        local dir_path = vim.fn.expand("%:p")
+        if dir_path:sub(1,3) == "oil" then
+            dir_path = dir_path:sub(7)  -- oil.nvim will add oil:// to the dir path
+        end
+        vim.fn.setreg("+", dir_path)
+    end,
+    { desc="Copy path to system clipboard (works for dirs and files)"})
