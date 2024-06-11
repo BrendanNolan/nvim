@@ -113,6 +113,8 @@ vim.api.nvim_set_keymap('n', '<leader>su', 'l[sz<CR>', { noremap = false, desc =
 
 vim.keymap.set('n', '<leader><leader>', 'z<CR>', {desc="Move cursor line to top of screen"})
 
+vim.keymap.set('n', '<leader>da', 'gg0cG', {desc="Clear whole buffer"})
+
 vim.keymap.set('n',
     '<leader>hsy',
     function()
