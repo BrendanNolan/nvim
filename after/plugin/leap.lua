@@ -1,2 +1,2 @@
-vim.keymap.set('n', 's', '<Plug>(leap)')
-vim.keymap.set('n', 'S', '<Plug>(leap-from-window)')
+vim.keymap.set('n', '<leader>e', '<Plug>(leap)')
+vim.keymap.set('n', '<leader>E', '<Plug>(leap-from-window)')
