@@ -34,6 +34,8 @@ require('telescope').setup{
       mappings = {
         n = {
           ['<leader>tcb'] = require('telescope.actions').delete_buffer,  -- close buffer from buffer picker
+          ['<Esc>'] = function() end,
+          ['q'] = require('telescope.actions').close,
         }
       }
     }
