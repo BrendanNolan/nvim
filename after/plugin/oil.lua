@@ -20,7 +20,7 @@ require('oil').setup{
   },
   skip_confirm_for_simple_edits = true,
   use_default_keymaps = false,
-  view_options = { show_hidden = true },
+  view_options = { show_hidden = false },
 }
 
 vim.keymap.set('n', '-', require('oil').open, { desc = 'Open parent directory' })
