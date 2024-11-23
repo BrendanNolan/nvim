@@ -124,17 +124,6 @@ local plugins = {
     },
 
     "ggandor/leap.nvim",
-
-    {
-        'hands-free-vim/talon.nvim',
-        dependencies = {
-            'dhruvasagar/vim-zoom',
-            'gcmt/taboo.vim',
-        },
-        config = function()
-            require('talon').setup({})
-        end,
-    }
 }
 
 local opts = {}
