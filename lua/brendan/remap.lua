@@ -26,7 +26,6 @@ vim.keymap.set("n", "<leader>xx", "bl~e", { desc = 'Change Capitalisation Of Sec
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
 vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux new tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>flsp", vim.lsp.buf.format)
 
 -- Quickfix --
