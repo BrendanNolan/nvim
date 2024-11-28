@@ -124,6 +124,8 @@ local plugins = {
     },
 
     "ggandor/leap.nvim",
+
+    "echasnovski/mini.ai",
 }
 
 local opts = {}
