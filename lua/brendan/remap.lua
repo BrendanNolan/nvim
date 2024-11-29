@@ -137,3 +137,24 @@ vim.keymap.set('n',
         vim.fn.setreg("+", dir_path)
     end,
     { desc="Copy path to system clipboard (works for dirs and files)"})
+
+local go_to_word_start =
+    function()
+        local col = vim.fn.col('.')
+        if col == 1 then
+            return
+        end
+        local line = vim.fn.line('.')
+        local prev_char = vim.fn.getline(line):sub(col - 1, col - 1)
+        local prev_char_is_whitespace = prev_char:match('%s')
+        if not prev_char_is_whitespace then
+            vim.cmd('normal! b')
+        end
+    end
+
+vim.keymap.set('n',
+    "<leader>gtb",
+    go_to_word_start,
+    { desc = "Go to beginning of current word, even if already there" }
+)
+
