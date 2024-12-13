@@ -64,6 +64,7 @@ vim.keymap.set("n", "<leader>o", "<cmd>on<CR>", { desc = "Make current window on
 
 -- Format Code --
 local format_current_buffer = function()
+    vim.cmd("w")
     local ft = vim.api.nvim_buf_get_option(0, 'filetype')
     local file_path = vim.api.nvim_buf_get_name(0)
     if ft == 'rust' then
