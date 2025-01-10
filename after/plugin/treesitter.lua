@@ -61,6 +61,7 @@ require'nvim-treesitter.configs'.setup {
         ["]r"] = "@return.outer",
         ["]t"] = { query = "@local.scope", query_group = "locals" },
         ["]z"] = { query = "@fold", query_group = "folds" },
+        ["];"] = "@statement.outer",
       },
       goto_next_end = {
         ["]]i="] = "@assignment.inner",
@@ -90,6 +91,7 @@ require'nvim-treesitter.configs'.setup {
         ["]]r"] = "@return.outer",
         ["]]t"] = { query = "@local.scope", query_group = "locals" },
         ["]]z"] = { query = "@fold", query_group = "folds" },
+        ["]];"] = "@statement.outer",
       },
       goto_previous_start = {
         ["[i="] = "@assignment.inner",
@@ -119,6 +121,7 @@ require'nvim-treesitter.configs'.setup {
         ["[r"] = "@return.outer",
         ["[t"] = { query = "@local.scope", query_group = "locals" },
         ["[z"] = { query = "@fold", query_group = "folds" },
+        ["[;"] = "@statement.outer",
       },
       goto_previous_end = {
         ["[[i="] = "@assignment.inner",
@@ -148,6 +151,7 @@ require'nvim-treesitter.configs'.setup {
         ["[[r"] = "@return.outer",
         ["[[t"] = { query = "@local.scope", query_group = "locals" },
         ["[[z"] = { query = "@fold", query_group = "folds" },
+        ["[[;"] = "@statement.outer",
       },
     },
     select = {
@@ -184,6 +188,7 @@ require'nvim-treesitter.configs'.setup {
         ["ar"] = "@return.outer",
         ["t"] = { query = "@local.scope", query_group = "locals" },
         ["z"] = { query = "@fold", query_group = "folds" },
+        [";"] = "@statement.outer",
       },
       -- You can choose the select mode (default is charwise 'v')
       --
@@ -238,6 +243,7 @@ require'nvim-treesitter.configs'.setup {
         [">r"] = "@return.outer",
         [">t"] = { query = "@local.scope", query_group = "locals" },
         [">z"] = { query = "@fold", query_group = "folds" },
+        [">;"] = "@statement.outer",
       },
       swap_previous = {
         ["<i="] = "@assignment.inner",
@@ -267,6 +273,7 @@ require'nvim-treesitter.configs'.setup {
         ["<r"] = "@return.outer",
         ["<t"] = { query = "@local.scope", query_group = "locals" },
         ["<z"] = { query = "@fold", query_group = "folds" },
+        ["<;"] = "@statement.outer",
       },
     },
   },
