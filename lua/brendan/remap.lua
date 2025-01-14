@@ -159,3 +159,19 @@ vim.keymap.set('n',
     { desc = "Go to beginning of current word, even if already there" }
 )
 
+local go_to_next_word_if_on_comma =
+    function()
+        local col = vim.fn.col('.')
+        local line = vim.fn.line('.')
+        local current_char = vim.fn.getline(line):sub(col, col)
+        local is_comma = current_char:match(',')
+        if is_comma then
+            vim.cmd('normal! w')
+        end
+    end
+
+vim.keymap.set('n',
+    "<leader>gc",
+    go_to_next_word_if_on_comma,
+    { desc = "Go to beginning of current word, even if already there" }
+)
