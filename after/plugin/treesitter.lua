@@ -188,7 +188,7 @@ require'nvim-treesitter.configs'.setup {
         ["ar"] = "@return.outer",
         ["-"] = { query = "@local.scope", query_group = "locals" },
         ["z"] = { query = "@fold", query_group = "folds" },
-        ["t"] = "@statement.outer",
+        ["at"] = "@statement.outer",
       },
       -- You can choose the select mode (default is charwise 'v')
       --
