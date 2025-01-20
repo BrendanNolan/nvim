@@ -61,6 +61,7 @@ local plugins = {
     {'theprimeagen/harpoon'},
     {'mbbill/undotree'},
     {'tpope/vim-fugitive'},
+    {'lewis6991/gitsigns.nvim'},
 
     {
         'nvim-lualine/lualine.nvim',
