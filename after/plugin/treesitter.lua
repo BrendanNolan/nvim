@@ -29,6 +29,9 @@ require'nvim-treesitter.configs'.setup {
       clear_on_cursor_move = true,  -- Set to false if you have an `updatetime` of ~100
     },
   },
+  -- The textobjects create a weird bug, if you are in visual block mode and you press 'l', say,
+  -- five times, then the fifth rightward move of the selection will take a long time. The issue
+  -- disappears if you comment out the textobjects section.
   textobjects = {
     move = {
       enable = true,
