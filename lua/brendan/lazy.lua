@@ -128,6 +128,7 @@ local plugins = {
     },
 
     "ggandor/leap.nvim",
+    "jghauser/follow-md-links.nvim",
 }
 
 local opts = {}
