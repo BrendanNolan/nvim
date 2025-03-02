@@ -7,8 +7,9 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+-- Centre the found text when continuing a search after the `/` or `?` commands
+-- vim.keymap.set("n", "n", "nzzzv")
+-- vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set("n", "<leader>nn", "o<Esc>o", { desc = 'Insert two new lines and go into insert mode in the second'})
 vim.keymap.set("n", "<leader>no", "o<Esc>o<Esc>O", { desc = 'Insert three new lines and go into insert mode in the second'})
