@@ -31,6 +31,7 @@ vim.keymap.set("n", "<leader>flsp", vim.lsp.buf.format)
 
 -- Quickfix --
 vim.keymap.set("n", "<leader>co", "<cmd>copen<CR>zz")
+vim.keymap.set("n", "<leader>qc", "<cmd>cclose<CR>zz")
 vim.keymap.set("n", "<Left>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<Right>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<leader>ln", "<cmd>lnext<CR>zz")
