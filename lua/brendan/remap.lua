@@ -21,7 +21,7 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set("n", "<leader>cc", "b~e", { desc = '[C]hange [C]apitalisation'})
+vim.keymap.set("n", "<leader>fx", "b~e", { desc = 'Change Capitalisation'})
 vim.keymap.set("n", "<leader>xx", "bl~e", { desc = 'Change Capitalisation Of Second Character'})
 
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
@@ -31,7 +31,7 @@ vim.keymap.set("n", "<leader>flsp", vim.lsp.buf.format)
 
 -- Quickfix --
 vim.keymap.set("n", "<leader>co", "<cmd>copen<CR>zz")
-vim.keymap.set("n", "<leader>qc", "<cmd>cclose<CR>zz")
+vim.keymap.set("n", "<leader>cc", "<cmd>cclose<CR>zz")
 vim.keymap.set("n", "<Left>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<Right>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<leader>ln", "<cmd>lnext<CR>zz")
