@@ -108,7 +108,7 @@ vim.keymap.set('n', '<leader>pb', '<cmd>bprevious<CR>', {desc = 'Previous Buffer
 vim.keymap.set('n', '<leader>cu', '<cmd>bufdo if empty(bufname(\'%\')) | bdelete! | endif<CR>', {desc = 'Close unnamed'})
 
 -- Put current function/class at top of file
--- Uses recursive mapping to lalow use of existing '[f' and '[c' treesitter mappings
+-- Uses recursive mapping to lalow use of existing '[f' and '[fc' treesitter mappings
 -- These commands begin with l because for some reason, having the cursor at col 0 at the
 -- beginning of the function/class will result in the previous function/class being put
 -- at the top of the file.
