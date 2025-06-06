@@ -128,6 +128,8 @@ local plugins = {
     },
 
     "ggandor/leap.nvim",
+
+    "sindrets/diffview.nvim",
 }
 
 local opts = {}
